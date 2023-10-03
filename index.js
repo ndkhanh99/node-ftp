@@ -7,7 +7,8 @@ const connectionProperties = {
     host: 'ftp.rakuten.ne.jp',
     user: '_partner_53016',
     password: '5AXzwF/y',
-    port: '16910'
+    port: '16910',
+    secure: false
 }
  
 const port = 9000;
