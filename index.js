@@ -14,10 +14,10 @@ const server = http.createServer((req, res) => {
     // client.getList();
     
     let config = {
-        host: 'localhost',
-        port: 21,
-        user: 'anonymous',
-        password: 'anonymous@'
+        host: 'ftp.rakuten.ne.jp',
+        port: 16910,
+        user: '_partner_53016',
+        password: '5AXzwF/y'
     }
     let options = {
         logging: 'basic'
