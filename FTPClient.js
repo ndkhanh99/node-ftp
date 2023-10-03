@@ -34,6 +34,7 @@ class FTPClient {
         (async () => {
             try {
                 let access = await self.client.access(self.settings);
+                console.log(access);
                 let data = await self.client.list();
                 data.forEach(i => {
                     console.log(i.name);
