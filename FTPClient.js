@@ -11,7 +11,7 @@ class FTPClient {
             port: port,
             user: username,
             password: password,
-            secure: secure
+            secure: false
         };
     }
 
