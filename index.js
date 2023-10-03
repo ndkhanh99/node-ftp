@@ -27,7 +27,7 @@ const getFilesFromFTP = () => {
     c.on('ready', function() {
       c.list(function(err, list) {
         if (err) throw err;
-        console.dir(list);
+        console.log(list);
         c.end();
       });
     });
