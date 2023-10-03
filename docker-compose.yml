@@ -1,0 +1,23 @@
+version: "3"
+
+networks:
+  line_gpt:
+    external: true
+
+services:
+  fika_frontend:
+    image: line_gpt_frontend
+    container_name: line_gpt_frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8077:8077
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env
+    restart: always
+    networks:
+      - line_gpt
