@@ -3,7 +3,7 @@ var Client = require('ftp');
 const ftp = require('./FTPClient');
  
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 9000;
  
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
@@ -15,4 +15,4 @@ const server = http.createServer((req, res) => {
     res.end('ok');
 });
  
-server.listen(80);
+server.listen(port);
