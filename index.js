@@ -23,6 +23,7 @@ const server = http.createServer((req, res) => {
 });
 
 const getFilesFromFTP = () => {
+    console.log('connecting');
     var c = new Client();
     c.on('ready', function() {
       c.list(function(err, list) {
