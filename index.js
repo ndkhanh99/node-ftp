@@ -1,9 +1,15 @@
 const http = require('http');
 var Client = require('ftp');
 const ftp = require('./FTPClient');
-var ftpClient = require('ftp-client')
+var ftpClient = require('ftp-client');
+
+const connectionProperties = {
+    host: 'ftp.rakuten.ne.jp',
+    user: '_partner_53016',
+    password: '5AXzwF/y',
+    port: '16910'
+}
  
-const hostname = '127.0.0.1';
 const port = 9000;
  
 const server = http.createServer((req, res) => {
@@ -12,22 +18,21 @@ const server = http.createServer((req, res) => {
 
     // const client = new ftp('ftp.rakuten.ne.jp', 16910, '_partner_53016', '5AXzwF/y', false);
     // client.getList();
-    
-    let config = {
-        host: 'ftp.rakuten.ne.jp',
-        port: 16910,
-        user: '_partner_53016',
-        password: '5AXzwF/y'
-    }
-    let options = {
-        logging: 'basic'
-    }
-    let client = new ftpClient(config, options);
-    client.connect(function () {
-        client.list();
-    });
-
+    getFilesFromFTP();
     res.end('ok');
 });
+
+const getFilesFromFTP = () => {
+    var c = new Client();
+    c.on('ready', function() {
+      c.list(function(err, list) {
+        if (err) throw err;
+        console.dir(list);
+        c.end();
+      });
+    });
+    // connect to localhost:21 as anonymous
+    c.connect(connectionProperties);
+}
  
 server.listen(port);
