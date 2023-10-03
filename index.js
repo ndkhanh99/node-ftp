@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
     res.end('ok');
 });
 
-const getFilesFromFTP = () => {
+async function getFilesFromFTP () {
     console.log('connecting');
     var c = new Client();
     c.on('ready', function() {
@@ -34,7 +34,8 @@ const getFilesFromFTP = () => {
       });
     });
     // connect to localhost:21 as anonymous
-    c.connect(connectionProperties);
+    await c.connect(connectionProperties);
+    console.log(c);
 }
  
 server.listen(port);
