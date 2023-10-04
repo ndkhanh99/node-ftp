@@ -7,7 +7,6 @@
 
 <script lang="js">
 import { defineComponent } from 'vue';
-import * as ftp from 'ftp';
 
 export default defineComponent({
     setup() {

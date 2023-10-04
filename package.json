@@ -12,6 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@chilkat/ck-node18-macosx": "^9.50.95",
     "basic-ftp": "^5.0.3",
     "ftp": "^0.3.10",
     "ftp-client": "^0.2.2",
